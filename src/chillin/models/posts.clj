@@ -1,9 +1,9 @@
 (ns chillin.models.posts
 	(:require [clj-couchdb.core :as couch]))
 
-(def base "https://gorsuch.cloudant.com")
+(def base (get (System/getenv) "BASE" "https://gorsuch.cloudant.com"))
 
-(def db "blog")
+(def db (get (System/getenv) "DB" "blog"))
 
 (defn now [] (System/currentTimeMillis))
 
